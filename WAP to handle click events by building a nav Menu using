@@ -1,0 +1,51 @@
+App.js
+import React from 'react'; import {Component } from 'react';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'; import Home from './Components/Home'; import Counter from './Components/Counter'; import About from
+'./Components/About'; import Users from './Components/Users';
+//import logo from './logo.svg'; import './App.css';
+class App extends Component{ render() { return ( <>
+<Router>
+<Routes>
+<Route path="/" element = {<Home />}/>
+<Route path="/about" element = {<About />}/>
+<Route path="/users" element = {<Users />}/>
+<Route path="/Counter" element = {<Counter />}/>
+</Routes>
+</Router>
+</>
+);
+}
+}
+export default App;
+
+
+Home.js
+import React from 'react'; import {Link} from 'react-router-dom'; function Home(){ return <div><nav>
+<ul>
+<li> <Link to="/">Home</Link></li>
+<li> <Link to="/about">About</Link></li>
+<li> <Link to="/users">Users</Link></li>
+<li> <Link to="/counter">Count</Link></li>
+</ul>
+</nav>
+</div>
+}
+export default Home;
+
+About.js
+import React from "react"; function About(){
+return <p><h1>This is About section</h1></p>
+} export default About;
+
+
+Users.js
+import React from 'react'; function Users(){
+return <p><h1>This is Users section</h1></p>
+}
+export default Users;
+
+Counter.js
+import React from 'react'; function Counter(){
+return <p><h1>This is Counter section</h1></p>
+}
+export default Counter;
